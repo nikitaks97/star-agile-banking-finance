@@ -10,7 +10,7 @@ pipeline{
         stage('Clone Repo')
         {
             steps{
-                git 'https://github.com/nikitaks97/star-agile-insurance-project.git'
+                git 'https://github.com/nikitaks97/star-agile-banking-finance.git'
             }
         }
         stage('Test Code')
@@ -28,7 +28,7 @@ pipeline{
         stage('Build Image')
         {
             steps{
-                sh 'docker build -t capstone_project3:$BUILD_NUMBER .'
+                sh 'docker build -t capstone_project1:$BUILD_NUMBER .'
             }
         }
 
@@ -40,8 +40,8 @@ pipeline{
                 {
                sh 'docker login -u  nikitaks997797 -p ${docker} '
                }
-                sh 'docker tag capstone_project3:$BUILD_NUMBER nikitaks997797/capstone_project3:$BUILD_NUMBER '
-                sh 'docker push nikitaks997797/capstone_project3:$BUILD_NUMBER'
+                sh 'docker tag capstone_project1:$BUILD_NUMBER nikitaks997797/capstone_project1:$BUILD_NUMBER '
+                sh 'docker push nikitaks997797/capstone_project1:$BUILD_NUMBER'
             }
         }
         
